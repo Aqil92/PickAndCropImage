@@ -16,8 +16,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
     }
 
     /** Start pick image activity with chooser. */
@@ -34,7 +32,7 @@ public class MainActivity extends Activity {
             if (resultCode == RESULT_OK) {
                 ((ImageView) findViewById(R.id.quick_start_cropped_image)).setImageURI(result.getUri());
                 Toast.makeText(
-                        this, "Cropping successful, Sample: " + result.getSampleSize(), Toast.LENGTH_LONG)
+                        this, "Cropping successful: " + result.getSampleSize(), Toast.LENGTH_LONG)
                         .show();
             } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
                 Toast.makeText(this, "Cropping failed: " + result.getError(), Toast.LENGTH_LONG).show();
